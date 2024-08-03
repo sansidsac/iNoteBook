@@ -66,7 +66,7 @@ const NoteState = (props) => {
 
   //update note
 
-  const updateNote = async (id, title, description, tag) => {
+  const editNote = async (id, title, description, tag) => {
     //Api call
 
     const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
@@ -82,19 +82,22 @@ const NoteState = (props) => {
     console.log(json);
 
     //Logic to update in client
-    for (let index = 0; index < notes.length; index++) {
-      const element = notes[index];
+    const newNotes = JSON.parse(JSON.stringify(notes));
+    for (let index = 0; index < newNotes.length; index++) {
+      const element = newNotes[index];
       if (element._id === id) {
-        element.title = title;
-        element.description = description;
-        element.tag = tag;
+        newNotes[index].title = title;
+        newNotes[index].description = description;
+        newNotes[index].tag = tag;
+        break;
       }
     }
+    setNotes(newNotes);
   };
 
   return (
     <NoteContext.Provider
-      value={{ notes, addNote, deleteNote, updateNote, getNotes }}>
+      value={{ notes, addNote, deleteNote, editNote, getNotes }}>
       {props.children}
     </NoteContext.Provider>
   );
