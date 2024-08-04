@@ -44,12 +44,12 @@ const Navbar = () => {
               </li>
             </ul>
 
-            <button className="btn btn-primary mx-2" type="submit">
+            <Link className="btn btn-primary mx-2" role="button" to="/login">
               Login
-            </button>
-            <button className="btn btn-primary" type="submit">
+            </Link>
+            <Link className="btn btn-primary mx-2" role="button" to="/signup">
               Signup
-            </button>
+            </Link>
           </div>
         </div>
       </nav>
