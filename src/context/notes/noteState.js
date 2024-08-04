@@ -54,8 +54,7 @@ const NoteState = (props) => {
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhODIyMTRlMWQwMzdhNTZjZDg3MmNmIn0sImlhdCI6MTcyMjMyOTE3Nn0.rSOAVto_XFB9jw2_-N1mFns6XyuO0PxRwxGvLxZn3mE",
       },
     });
-    const json = response.json();
-    console.log(json);
+    await response.json();
 
     //client side
     const newNotes = notes.filter((note) => {
@@ -78,9 +77,8 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({ title, description, tag }),
     });
-    const json = await response.json();
-    console.log(json);
-
+    await response.json();
+    
     //Logic to update in client
     const newNotes = JSON.parse(JSON.stringify(notes));
     for (let index = 0; index < newNotes.length; index++) {
