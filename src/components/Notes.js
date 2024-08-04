@@ -3,7 +3,7 @@ import NoteContext from "../context/notes/noteContext";
 import NoteItem from "./NoteItem";
 import AddNote from "./AddNote";
 
-const Notes = () => {
+const Notes = ({showAlert}) => {
   const { notes, getNotes, editNote } = useContext(NoteContext);
 
   useEffect(() => {
@@ -18,6 +18,7 @@ const Notes = () => {
     e.preventDefault();
     editNote(note.id, note.etitle, note.edescription, note.etag);
     refClose.current.click();
+    showAlert("Updated successfully","success");
 }
 
 const handleOnChange=(e)=>{
@@ -27,7 +28,6 @@ const handleOnChange=(e)=>{
   const updateNote=(currentNote)=>{
     ref.current.click();
     setNote({id:currentNote._id, etitle:currentNote.title, edescription:currentNote.description, etag:currentNote.tag});
-
   }
   
 
@@ -36,7 +36,7 @@ const handleOnChange=(e)=>{
 
   return (
     <>
-      <AddNote />
+      <AddNote showAlert={showAlert} />
         
       <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Launch static backdrop modal
@@ -125,7 +125,7 @@ const handleOnChange=(e)=>{
         {notes.length===0 && "No notes to display"}
         </div>
         {notes.map((note) => (
-          <NoteItem key={note._id} updateNote={updateNote} note={note} />
+          <NoteItem key={note._id} updateNote={updateNote} showAlert={showAlert} note={note} />
         ))}
       </div>
     </>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const Signup = ({ showAlert }) => {
     const navigate = useNavigate();
     const [credentials, setCredentials] = useState({ name: "", email: "", password: "", cpassword: "" });
     const handleSubmit = async (e) => {
@@ -19,9 +19,9 @@ const Signup = () => {
           //save the auth token and redirect
           localStorage.setItem("token", json.authtoken);
           navigate("/");
+          showAlert("Account created successfully", "success");
         } else {
-          alert("A User with this email already exists");
-        }
+          showAlert("This email already exists", "danger");}
     }
     const onChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
