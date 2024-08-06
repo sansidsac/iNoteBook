@@ -2,10 +2,13 @@ i{
     cursor: pointer;
 }
 
+
+
 body{
-    background-color: rgb(172, 34, 34);
+    background-color: rgb(139, 139, 139);
 }
 
 .alert-height{
     height: 20px;
 }
+
