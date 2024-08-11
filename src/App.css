@@ -3,12 +3,182 @@ i{
 }
 
 
-
-body{
-    background-color: rgb(139, 139, 139);
-}
-
 .alert-height{
     height: 20px;
 }
 
+/* From Uiverse.io by aboalsim114 */ 
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background: linear-gradient(to bottom, #fff, #ddd); /* Light linear gradient */
+    border-radius: 10px;
+    overflow: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transform: rotateX(-10deg);
+    transition: all 0.3s ease-in-out;
+    animation: form-animation 0.5s ease-in-out;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background: linear-gradient(to bottom, #fff, #eee); /* Light linear gradient */
+    border-radius: 10px;
+    overflow: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transform: rotateX(-10deg);
+    transition: all 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    animation: card-animation 0.5s ease-in-out;
+}
+
+@keyframes card-animation {
+  from {
+    transform: rotateX(-30deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #222;
+}
+
+.btn-secondary {
+  background-color: #fff;
+  color: #000;
+}
+
+.btn-secondary:hover {
+  background-color: #f2f2f2;
+}
+
+.error {
+  color: red;
+}
+  
+  @keyframes form-animation {
+    from {
+      transform: rotateX(-30deg);
+      opacity: 0;
+    }
+  
+    to {
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+  
+  button:hover {
+    background-color: #0077be;
+    font-size: 17px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+  
+/* Navigation bar */
+
+.navbar {
+  background-color: #111;
+  overflow: hidden;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Application background */
+
+body {
+    background: linear-gradient(to bottom, #333, #111) no-repeat fixed; /* Dark linear background */
+    background-size: cover;
+  }
+   
+
+h1, h2, h3, h4, h5, h6 {
+    color: #f2f2f2;
+}
+
+.about-para {
+  color: #f2f2f2;
+  font-size: 18px;
+}
+
+/* Alert Component */
+
+.alert{
+  background-color: #ffffff;
+  color: #0f0f0f;
+  border: 1px solid #ffffff;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+button:disabled, .btn:disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: not-allowed;
+}

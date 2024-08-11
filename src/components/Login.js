@@ -35,7 +35,7 @@ const Login = ({showAlert}) => {
 
   return (
     <div className="container">
-      <form  onSubmit={handleOnSubmit}>
+      <form className="form" onSubmit={handleOnSubmit}>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
             Email address

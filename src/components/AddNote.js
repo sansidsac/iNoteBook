@@ -20,7 +20,7 @@ const AddNote = ({showAlert}) => {
     <div>
         <h2>Enter your Note</h2>
       <div className="container my-3">
-        <form>
+        <form className='form'>
           <div className="mb-3">
             <label htmlFor="title" className="form-label">
               Title

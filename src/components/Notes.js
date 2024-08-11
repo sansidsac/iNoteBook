@@ -67,7 +67,7 @@ const handleOnChange=(e)=>{
                 data-bs-dismiss="modal"
                 aria-label="Close"></button>
             </div>
-            <div className="modal-body"><form>
+            <div className="modal-body"><form className="form">
           <div className="mb-3">
             <label htmlFor="etitle" className="form-label">
               Title
